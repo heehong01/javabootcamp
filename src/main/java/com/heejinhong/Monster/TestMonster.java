@@ -1,4 +1,4 @@
-package com.heejinhong.MonsterTest;
+package com.heejinhong.Monster;
 
 import com.heejinhong.Monster.FireMonster;
 import com.heejinhong.Monster.Monster;

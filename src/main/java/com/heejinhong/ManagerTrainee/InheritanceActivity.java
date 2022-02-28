@@ -1,4 +1,4 @@
-package com.heejinhong.EmployeeTest;
+package com.heejinhong.ManagerTrainee;
 
 import com.heejinhong.ManagerTrainee.Manager;
 import com.heejinhong.ManagerTrainee.Trainee;

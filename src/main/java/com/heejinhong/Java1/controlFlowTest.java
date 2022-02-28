@@ -3,7 +3,8 @@ import static com.heejinhong.Java1.controlFlow.*;
 
 public class controlFlowTest {
     public static void main(String[] args){
-        //LessThanTen(7);
+        LessThanTen(7);
+        LessThanTen(15);
         GreaterOrLessThanTen(7);
         isItBetweenTenAndTwenty(15);
         isItBetweenTenAndTwenty(50);

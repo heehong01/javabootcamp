@@ -4,6 +4,7 @@ import com.heejinhong.Monster.FireMonster;
 import com.heejinhong.Monster.Monster;
 import com.heejinhong.Monster.StoneMonster;
 import com.heejinhong.Monster.WaterMonster;
+//THIS IS FIXING
 
 public class TestMonster {
     public static void main(String[] args) {

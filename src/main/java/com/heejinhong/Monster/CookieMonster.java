@@ -1,17 +1,19 @@
 package Monster;
 
-public class FireMonster implements IMonster {
+public class CookieMonster implements IMonster {
+    private String name;
+
     @Override
     public String getName() {
         return name;
     }
 
-    private String name;
-    public FireMonster(String name) {
+    public CookieMonster(String name){
         this.name = name;
     }
+
     @Override
     public String attack(){
-        return "Attack with fire!";
+        return getName() + " attack with cookie!";
     }
 }

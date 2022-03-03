@@ -1,10 +1,13 @@
-package com.heejinhong.Monster;
+package Monster;
 
-import com.heejinhong.Monster.Monster;
+public class WaterMonster implements IMonster {
+    @Override
+    public String getName() {
+        return name;
+    }
 
-public class WaterMonster extends Monster {
-    public WaterMonster(String name) {
-        super(name);
+    private String name;
+    public WaterMonster(String name) {this.name = name;
     }
     @Override
     public String attack(){

@@ -1,9 +1,4 @@
-package com.heejinhong.Monster;
-
-import com.heejinhong.Monster.FireMonster;
-import com.heejinhong.Monster.Monster;
-import com.heejinhong.Monster.StoneMonster;
-import com.heejinhong.Monster.WaterMonster;
+package Monster;
 
 public class TestMonster {
     public static void main(String[] args) {
@@ -16,7 +11,8 @@ public class TestMonster {
         Monster[] monsters = {new FireMonster("r2u2"),
                 new WaterMonster("u2r2"),
                 new StoneMonster("r2r2"),
-
+                new StoneMonster("a2b2"),
+                new CookieMonster("Cookie")
         };
         MonsterHandler monsterHandler = new MonsterHandler();
         monsterHandler.handleMonsters(monsters);
@@ -31,7 +27,7 @@ public class TestMonster {
         //System.out.println(m1.attack());  // Run StoneMonster's attack()
 
         // We have a problem here!!!
-        Monster m4 = new Monster("u2u2");
-        System.out.println(m4.attack());  // garbage!!!
+        //Monster m4 = new Monster("u2u2");
+        //System.out.println(m4.attack());  // garbage!!!
     }
 }

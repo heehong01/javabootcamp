@@ -1,4 +1,4 @@
-package com.heejinhong.Monster;
+package Monster;
 
 public interface MonsterInterface {
     String myfield = "xyz";

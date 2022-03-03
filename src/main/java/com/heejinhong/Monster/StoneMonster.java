@@ -1,8 +1,21 @@
-package com.heejinhong.Monster;
+package Monster;
+public class StoneMonster implements IMonster {
+    @Override
+    public String getName() {
+        return name;
+    }
 
-import com.heejinhong.Monster.Monster;
+    private String name;
 
-public class StoneMonster extends Monster {
+    public StoneMonster(String name) {
+        this.name = name;
+    }
+    @Override
+    public String attack(){
+        return "Attack with stones!";
+
+    }
+/*public class StoneMonster extends Monster {
     public StoneMonster(String name) {
         super(name);
     }
@@ -10,5 +23,5 @@ public class StoneMonster extends Monster {
     public String attack(){
         return "Attack with stones!";
 
-    }
+    }*/
 }

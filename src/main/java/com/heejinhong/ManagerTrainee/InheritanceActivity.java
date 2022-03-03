@@ -1,8 +1,5 @@
 package com.heejinhong.ManagerTrainee;
 
-import com.heejinhong.ManagerTrainee.Manager;
-import com.heejinhong.ManagerTrainee.Trainee;
-
 public class InheritanceActivity {
     public static void main(String[] args){
         //Test Case 1

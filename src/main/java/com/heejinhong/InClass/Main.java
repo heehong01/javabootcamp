@@ -1,5 +1,7 @@
 package com.heejinhong.InClass;
 
+import java.util.function.IntPredicate;
+
 public class Main {
     public static void main(String[] args) {
         Calculator multiply = (x,y ) -> x * y;
@@ -9,6 +11,10 @@ public class Main {
         System.out.println(multipliedResult);
         System.out.println(addedResult);
         myMethod((x,y)->x+y, (x,y)->x*y);
+
+        IntPredicate predicate = x -> x < 10;
+        boolean test = predicate.test(15);
+        System.out.println(test);
     }
 
     public static void myMethod(Calculator m , Calculator d ){

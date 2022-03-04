@@ -53,8 +53,9 @@ public class Product {
     public void calculateProductTotal(){
         double subtotal = getPrice()*getQuantity();
         double total = subtotal + subtotal*SALES_TAX;
-        System.out.println("Subtotal for " + getName() + " is: $" + subtotal);
-        System.out.printf("Total for %s is: $%.2f\n\n", getName(),total);
+        System.out.printf("\n%-20s: $%.2f\n", ("Subtotal for " + getName()), subtotal);
+        System.out.printf("%-20s: $%.2f\n", "Sales Tax", subtotal*SALES_TAX);
+        System.out.printf("%-20s: $%.2f\n\n", ("Total for "+ getName()),total);
     }
 
 

@@ -38,6 +38,7 @@ public class CafeAppUI {
                 }
                 else if(coffeeName.equals("Exit")){
                     continueLoop = false;
+                    continue;
                 }
                 //else{
                 //    System.out.println("Please enter the right drink item");
@@ -87,4 +88,5 @@ public class CafeAppUI {
             System.out.println("Needed to enter an INTEGER value for the quantity of " + coffeeType.getName());
         }
     }
+
 }

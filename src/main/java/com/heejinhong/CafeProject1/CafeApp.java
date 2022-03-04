@@ -1,7 +1,7 @@
-package com.heejinhong.Cafe;
+package com.heejinhong.CafeProject1;
 
 
-import static com.heejinhong.Cafe.CafeAppUI.startCafeApp;
+import static com.heejinhong.CafeProject1.CafeAppUI.startCafeApp;
 
 public class CafeApp {
 

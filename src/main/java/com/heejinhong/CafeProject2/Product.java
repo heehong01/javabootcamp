@@ -1,11 +1,11 @@
-package com.heejinhong.Cafe;
+package com.heejinhong.CafeProject2;
 
-public class Product {
+public abstract class Product {
     private String name;
     private double price;
     private String description;
     private int quantity;
-    private final double SALES_TAX = 0.08;
+
 
 
     public String getName() {
@@ -50,13 +50,14 @@ public class Product {
         this.description = description;
     }
 
-    public void calculateProductTotal(){
+    public abstract double calculateProductTotal();
+    /*public void calculateProductTotal(){
         double subtotal = getPrice()*getQuantity();
         double total = subtotal + subtotal*SALES_TAX;
         System.out.printf("\n%-20s: $%.2f\n", ("Subtotal for " + getName()), subtotal);
         System.out.printf("%-20s: $%.2f\n", "Sales Tax", subtotal*SALES_TAX);
         System.out.printf("%-20s: $%.2f\n\n", ("Total for "+ getName()),total);
-    }
+    }*/
 
 
 }

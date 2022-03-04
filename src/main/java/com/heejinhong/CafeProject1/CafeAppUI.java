@@ -1,4 +1,4 @@
-package com.heejinhong.Cafe;
+package com.heejinhong.CafeProject1;
 
 import java.util.Scanner;
 
@@ -49,7 +49,20 @@ public class CafeAppUI {
         catch (Exception e){
             System.out.println("Needed to enter a STRING value!");
         }
+        exitOutputSubTotalSubTotalAndTaxAndFinalTotal(coffee, espresso, cappuccino);
+        input.close();
+    }
 
+    private static void exitOutputSubTotalSubTotalAndTaxAndFinalTotal(Product coffee, Product espresso, Product cappuccino) {
+        double total;
+        double subtotalAndTax;
+        double subtotal;
+        subtotal = coffee.calculateProductTotal() + espresso.calculateProductTotal() + cappuccino.calculateProductTotal();
+        subtotalAndTax = subtotal*0.08;
+        total = subtotal + subtotalAndTax;
+        System.out.printf("%-20s: $\n", "Subtotal", subtotal);
+        System.out.printf("%-20s: $\n", "Total Sales Tax", subtotalAndTax);
+        System.out.printf("%-20s: $\n", "Total", total);
         System.out.println("Thank you and have a good day!");
     }
 
@@ -73,20 +86,23 @@ public class CafeAppUI {
     private static void coffeeOrderPrintStatement() {
         System.out.println("MENU:");
         System.out.println("Coffee:     2.99");
-        System.out.println("Espresso:   3.99");
-        System.out.println("Cappuccino: 4.99\n");
-        System.out.println("Please enter the name of your drink and the quantity of your product.");
-        System.out.println("Type exit to quit CafeApp");
-    }
+            System.out.println("Espresso:   3.99");
+            System.out.println("Cappuccino: 4.99\n");
+            System.out.println("Please enter the name of your drink and the quantity of your product.");
+            System.out.println("Type exit to quit CafeApp");
+        }
 
-    private static void productQuantityInput(Product coffeeType, Scanner input) {
-        try{
-            System.out.println("How many " + coffeeType.getName() + " would you like?");
-            coffeeType.setQuantity(input.nextInt());
-            coffeeType.calculateProductTotal();
-        }catch(Exception e){
-            System.out.println("Needed to enter an INTEGER value for the quantity of " + coffeeType.getName());
+        private static void productQuantityInput(Product coffeeType, Scanner input) {
+            try{
+                System.out.println("How many " + coffeeType.getName() + " would you like?");
+                coffeeType.setQuantity(input.nextInt());
+                double subtotal = coffeeType.calculateProductTotal();
+                System.out.println(coffeeType.getName() + ": " + coffeeType.getDescription());
+                System.out.println("Subtotal is " + subtotal);
+            }catch(Exception e){
+                System.out.println("Needed to enter an INTEGER value for the quantity of " + coffeeType.getName());
         }
     }
+
 
 }

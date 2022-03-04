@@ -1,4 +1,6 @@
 package com.heejinhong.Library;
 
-public class LibraryUser {
+public interface LibraryUser {
+    void registerAccount(int age);
+    void requestBook(String bookType);
 }

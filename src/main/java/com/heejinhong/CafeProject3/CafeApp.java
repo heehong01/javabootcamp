@@ -1,13 +1,14 @@
-package com.heejinhong.CafeProject2;
-
-import com.heejinhong.CafeProject2.Product;
-import com.heejinhong.CafeProject2.Cappuccino;
-import com.heejinhong.CafeProject2.Coffee;
-import com.heejinhong.CafeProject2.Espresso;
+package com.heejinhong.CafeProject3;
 
 import java.util.Scanner;
 
-public class CafeAppUI {
+
+public class CafeApp {
+
+    public static void main(String[] args) {
+
+        startCafeApp();
+    }
 
     static void startCafeApp() {
         double subtotal = 0;
@@ -20,22 +21,21 @@ public class CafeAppUI {
         Scanner input = new Scanner(System.in);
         try{
             coffeeOrderPrintStatement();
-            String coffeeName = stringFirstLetterUpperCase(input.next());
-            if(coffeeName.equals(coffee.getName())){
-                productQuantityInput(coffee, input);
-                subtotal = coffee.calculateProductTotal();
-                System.out.println("Subtotal is " + subtotal);
-            }
-            else if(coffeeName.equals(espresso.getName())){
-                productQuantityInput(espresso, input);
-                subtotal = espresso.calculateProductTotal();
-                System.out.println("Subtotal is " + subtotal);
-            }
-            else if(coffeeName.equals(cappuccino.getName())){
-                productQuantityInput(cappuccino, input);
-                subtotal = cappuccino.calculateProductTotal();
-                System.out.println("Subtotal is " + subtotal);
-            }
+
+            productQuantityInput(coffee, input);
+            subtotal += coffee.calculateProductTotal();
+            System.out.printf("%-15s%-30s%3d\n", coffee.getName(), coffee.getDescription(), coffee.getQuantity());
+            System.out.println("Subtotal is " + subtotal);
+
+            productQuantityInput(espresso, input);
+            subtotal += espresso.calculateProductTotal();
+            System.out.printf("%-15s%-30s%3d\n", espresso.getName(), espresso.getDescription(), espresso.getQuantity());
+            System.out.println("Subtotal is " + espresso.calculateProductTotal());
+
+            productQuantityInput(cappuccino, input);
+            subtotal += cappuccino.calculateProductTotal();
+            System.out.printf("%-15s%-30s%3d\n", cappuccino.getName(), cappuccino.getDescription(), espresso.getQuantity());
+            System.out.println("Subtotal is " + cappuccino.calculateProductTotal());
         }
         catch (Exception e){
             System.out.println("Needed to enter a STRING value!");
@@ -58,7 +58,6 @@ public class CafeAppUI {
         System.out.println("Coffee:     2.99");
         System.out.println("Espresso:   3.99");
         System.out.println("Cappuccino: 4.99\n");
-        System.out.println("Please enter the name of your drink and the quantity of your product.");
     }
 
     private static void productQuantityInput(Product coffeeType, Scanner input) {
@@ -99,5 +98,4 @@ public class CafeAppUI {
             System.out.println("Needed to enter an INTEGER value for the quantity of " + coffeeType.getName());
         }
     }
-
 }

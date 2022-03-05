@@ -4,6 +4,7 @@ public class Coffee extends Product{
     boolean sugar, milk;
 
     public Coffee(){
+        super();
         this.milk = false;
         this.sugar = false;
     }

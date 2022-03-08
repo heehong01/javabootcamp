@@ -13,7 +13,7 @@ public class AbstractDAO {
     public void connect() throws SQLTransientConnectionException {
         try {
             Class.forName(MYSQL_CJ_JDBC_DRIVER);
-            conn = DriverManager.getConnection(JDBC_MYSQL_LOCALHOST_CLASSICMODELS, USERNAME, PASSWORD);
+            conn = DriverManager.getConnection(JDBC_MYSQL_LOCALHOST_MYDB, USERNAME, PASSWORD);
         } catch (SQLException e) {
             throw new SQLTransientConnectionException();
         } catch (ClassNotFoundException e) {

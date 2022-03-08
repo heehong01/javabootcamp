@@ -1,4 +1,4 @@
-package com.heejinhong.AbstractDAOActivity;
+package com.heejinhong.AbstractDAOActivity.Item;
 
 public class Item {
     private int id;

@@ -1,10 +1,41 @@
 package com.heejinhong.AbstractDAOActivity;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
+
+import com.heejinhong.AbstractDAOActivity.Item.*;
+import com.heejinhong.AbstractDAOActivity.Customer.*;
+import com.heejinhong.AbstractDAOActivity.mydb.*;
+import static com.heejinhong.AbstractDAOActivity.Constants.*;
+
 public class DAOMain {
     public static void main(String[] args) {
+        //DropCustomerTable.dropCustomerTable();
+        //DropItemTable.dropItemTable();
+        //Initialization of Customers and Item table
+        initializationOfTablesCustomersAndItem();
 
+        InsertCustomersTable.insertCustomersTable();
+        InsertItemsTable.insertItemsTable();
+
+        CustomerDAOI customerDAOI = new CustomerDAOImpl();
+        ItemDAOI itemDAOI = new ItemDAOImpl();
+git
+
+        itemDAOI.getAllItems();
+
+        DropCustomerTable.dropCustomerTable();
+        DropItemTable.dropItemTable();
     }
+
+    private static void initializationOfTablesCustomersAndItem() {
+        CreateCustomersTable.createCustomersTable();
+        CreateItemsTable.createItemsTable();
+    }
+
 }
 /*Database Tables:
 Customer - id(int), email(varchar2), fname(varchar2), lname(varchar2).

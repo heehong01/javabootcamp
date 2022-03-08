@@ -1,13 +1,15 @@
-package com.heejinhong.AbstractDAOActivity;
+package com.heejinhong.AbstractDAOActivity.Item;
 
 import java.sql.SQLTransientConnectionException;
+import com.heejinhong.AbstractDAOActivity.Item.Item;
+
 import java.util.List;
 
 public interface ItemDAOI {
     enum SQL{
         GET_ALL_ITEM("SELECT * FROM item"),
-        ADD_ITEM("SELECT * FROM students WHERE id=?"),
-        REMOVE_ITEM_BY_ID("SELECT * FROM item where id =?");
+        ADD_ITEM("INSERT INTO item (id, name, price) VALUES (?, ?, ?)"),
+        REMOVE_ITEM_BY_ID("DELETE FROM item where id =?");
         private final String query;
 
         private SQL(String s) {
@@ -18,6 +20,6 @@ public interface ItemDAOI {
         }
     }
     List<Item> getAllItems();
-    Item addItem(Item i);
-    Item removeItemById(int id);
+    void addItem(Item i);
+    void removeItemById(int id);
 }

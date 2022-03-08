@@ -1,4 +1,4 @@
-package com.heejinhong.AbstractDAOActivity;
+package com.heejinhong.AbstractDAOActivity.Customer;
 
 public class Customer {
 
